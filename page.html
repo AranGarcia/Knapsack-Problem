@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Test site</title>
+    <script src="chance.js"></script>
+    <script src="front.js"></script>
+    <script src="genetics.js"></script>
+</head>
+
+<body>
+    <!-- File loading -->
+    <!-- <fieldset>
+        <label for="archivo">Archivo</label>
+        <br>
+        <input type="file" id="fileInput">
+        <br>
+        <br>
+        <button type="button" onclick="loadFile();">Cargar</button>
+    </fieldset> -->
+
+
+    <table style="border: solid; display: inline-table;" id="knapsack">
+        <thead>
+            <th>Article </th>
+            <th>Weight</th>
+            <th>Value</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>
+                    <input type="number" min=0 value=2>
+                </td>
+                <td>
+                    <input type="number" min=0 value=1>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>
+                    <input type="number" min=0 value=4>
+                </td>
+                <td>
+                    <input type="number" min=0 value=1>
+                </td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>
+                    <input type="number" min=0 value=3>
+                </td>
+                <td>
+                    <input type="number" min=0 value=5>
+                </td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>
+                    <input type="number" min=0 value=4>
+                </td>
+                <td>
+                    <input type="number" min=0 value=1>
+                </td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>
+                    <input type="number" min=0 value=3>
+                </td>
+                <td>
+                    <input type="number" min=0 value=6>
+                </td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>
+                    <input type="number" min=0 value=6>
+                </td>
+                <td>
+                    <input type="number" min=0 value=5>
+                </td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>
+                    <input type="number" min=0 value=3>
+                </td>
+                <td>
+                    <input type="number" min=0 value=3>
+                </td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>
+                    <input type="number" min=0 value=6>
+                </td>
+                <td>
+                    <input type="number" min=0 value=6>
+                </td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>
+                    <input type="number" min=0 value=4>
+                </td>
+                <td>
+                    <input type="number" min=0 value=3>
+                </td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td>
+                    <input type="number" min=0 value=3>
+                </td>
+                <td>
+                    <input type="number" min=0 value=1>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table style="border: solid; display: inline-table;" id="existence-table">
+        <thead>
+            <th>Existence</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <input type="number" value=4 min=0>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value=5 min=0>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value=2 min=0>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value=1 min=0>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value=2 min=0>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value=3 min=0>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value=4 min=0>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value=2 min=0>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value=3 min=0>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value=2 min=0>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table style="border: solid; display: inline-table;" id="type-table">
+        <thead>
+            <th>Type</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <select>
+                        <option value="l">Liquid</option>
+                        <option value="f">Food</option>
+                        <option value="d">Document</option>
+                        <option value="e">Electronic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option value="l">Liquid</option>
+                        <option value="f" selected>Food</option>
+                        <option value="d">Document</option>
+                        <option value="e">Electronic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option value="l">Liquid</option>
+                        <option value="f">Food</option>
+                        <option value="d" selected>Document</option>
+                        <option value="e">Electronic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option value="l">Liquid</option>
+                        <option value="f" selected>Food</option>
+                        <option value="d">Document</option>
+                        <option value="e">Electronic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option value="l">Liquid</option>
+                        <option value="f">Food</option>
+                        <option value="d" selected>Document</option>
+                        <option value="e">Electronic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option value="l">Liquid</option>
+                        <option value="f">Food</option>
+                        <option value="d">Document</option>
+                        <option value="e" selected>Electronic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option value="l">Liquid</option>
+                        <option value="f" selected>Food</option>
+                        <option value="d">Document</option>
+                        <option value="e">Electronic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option value="l">Liquid</option>
+                        <option value="f">Food</option>
+                        <option value="d">Document</option>
+                        <option value="e" selected>Electronic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option value="l" selected>Liquid</option>
+                        <option value="f">Food</option>
+                        <option value="d">Document</option>
+                        <option value="e">Electronic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option value="l" selected>Liquid</option>
+                        <option value="f">Food</option>
+                        <option value="d">Document</option>
+                        <option value="e">Electronic</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>Max Weight</h4>
+    <input type="number" id="maxWeight" min=0 value=17>
+
+    <h4>Number of individuals per generation</h4>
+    <input type="number" id="npop" min=0 value=8>
+
+    <h4>Number of Generations</h4>
+    <input type="number" id="numgen" min=0 value=10>
+
+    <h4>Number of individuals that will reproduce</h4>
+    <input type="number" id="numsel" min=0 value=3>
+
+    <br>
+    <br>
+    <button onclick="loadInfo()">Calculate</button>
+    <button onclick="loadInfo('existence')">Existence</button>
+    <button onclick="loadInfo('type')">Type</button>
+</body>
+
+</html>
