@@ -22,6 +22,7 @@ function getItems(search) {
 
     if (search != "normal") {
         if (search == "existence") {
+            // console.log("HOLAAAAAA");
             console.log("Getting existences");
             var exist = getExistences();
         }
@@ -48,8 +49,10 @@ function getItems(search) {
 
         items[item - 1] = info;
     }
+    // console.log("HOLAAAAAA");
 
     items.length = rows.length;
+    // console.log(items,items.length,"HOLAAAAAA");
 
     return items;
 }
@@ -67,7 +70,7 @@ function getExistences() {
     var selections = [];
     for (r of rows) {
         select = r.children[0].children[0];
-
+        // console.log(r.children[0].children[0],"HOLAAAAAA");
         selections.push(select.value);
     }
 
