@@ -2,9 +2,9 @@ fileName = 'data'
 
 class BoxGenerator(object):
     """docstring for BoxGenerator."""
-    def __init__(self, nameAlgo, population, data):
+    def __init__(self, nameAlgo, population, popSize, data):
         if nameAlgo != "Calculate":
-            if nameAlgo == "Existence"
+            if nameAlgo == "Existence":
                 print ("Population generator for genetic search with existence verification.");
 
                 self.generate = function randomPopulation(population, data['numIndi'], chromSize, info) {
@@ -15,7 +15,7 @@ class BoxGenerator(object):
                 selecting = None
 
                 items = None
-                for (var i = 0; i < popSize; ++i) {
+                for i in range (0,popSize)
                     items = chance.integer({ min: 1, max: 3 });
                     picked = new Set();
                     chromosome = new Array(chromSize).fill(0);
@@ -89,14 +89,14 @@ def modifyReproduce():
 def printAlgoInfo(nameAlgo,data):
     print ("Calcular por la opcion",nameAlgo+'.')
     population= []
-    showData(data)
+    # showData(data)
 
 def main():
     table = matrixLoad()
     data= {'weight' : 17,
-    'numIndi' : 8,
-    'numGene' : 10,
-    'numRepro' : 3}
+           'numIndi' : 8,
+           'numGene' : 10,
+           'numRepro' : 3}
 
     while True:
         print ("Menu")

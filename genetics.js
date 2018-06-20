@@ -1,15 +1,15 @@
-/* 
+/*
  * Chromosome representation:
- * 
+ *
  */
 
 var chance = new Chance(Math.random);
 var BOX;
 
-/* 
+/*
  * Class representing a box with items as an individual in the
  * genetic algorithm.
- * 
+ *
  */
 class Box {
     constructor(items) {
@@ -37,7 +37,7 @@ class Box {
         return new Box(items);
     }
 
-    /* 
+    /*
      * Mutation removing one item and adding another.
      */
     mutate(genes = 1) {
@@ -85,8 +85,8 @@ class Box {
     }
 }
 
-/* 
- * Generator class that creates a population 
+/*
+ * Generator class that creates a population
  */
 class BoxGenerator {
     constructor(type) {
@@ -121,7 +121,7 @@ class BoxGenerator {
                                 if (!picked.has(index) && chromosome[index] <= info) {
                                     selecting = false;
 
-                                    
+
 
                                     picked.add(index);
                                 }
@@ -134,15 +134,46 @@ class BoxGenerator {
                         population.push(box);
                     }
                 }
-            } else {
+            }
+            if (type === 'type')  {      //Type
                 console.log("Population generator for genetic search with type verification.");
 
-                this.generate = function () {
+                this.generate = function randomPopulation(population, popSize, chromSize, info) {
+                  var picked;
+                  var chromosome;
+                  var count;
+                  var index;
+                  var selecting;
 
+                  var items;
+                  for (var i = 0; i < popSize; ++i) {
+                      items = chance.integer({ min: 1, max: 3 });
+                      picked = new Set();
+                      chromosome = new Array(chromSize).fill(0);
+                      count = 0;
+
+                      // Iterate a from 1 to 3 times max
+                      for (var j = 0; j < items; ++j) {
+                          selecting = true;
+                          while (selecting) {
+
+                              index = chance.integer({ min: 0, max: (chromSize - 1) });
+
+                              if (!picked.has(index)) {
+                                  selecting = false;
+                                  picked.add(index);
+                              }
+                          }
+
+                          chromosome[index] = 1;
+                      }
+
+                      var box = new Box(chromosome);
+                      population.push(box);
+                    }
                 }
             }
-        }
-        else {
+        } else {
             console.log("Population generator for normal genetic search.");
 
             this.generate = function randomPopulation(population, popSize, chromSize) {
@@ -202,7 +233,7 @@ class Roulette {
     }
 }
 
-/* 
+/*
  * Normal genetic search, without considering existence nor type
  */
 function geneticSearch(box, maxw, numGen, popSize, selection, searchType) {
@@ -320,7 +351,7 @@ function randomPopulation(population, popSize, chromSize, searchType) {
     }
 }
 
-/* 
+/*
  * Comparison function for the sort method of an array of Box objects
  */
 function compare(a, b) {
